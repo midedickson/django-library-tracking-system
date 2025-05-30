@@ -56,6 +56,7 @@ class Loan(models.Model):
 
 @receiver(post_save, sender=Loan, dispatch_uid="add_due_date")
 def add_due_date(sender, instance, created, **kwargs):
-    if instance.due_date is None:
-        instance.due_date = instance.loan_date + timezone.timedelta(days=14)
-        instance.save()
+    if created:
+        if instance.due_date is None:
+            instance.due_date = instance.loan_date + timezone.timedelta(days=14)
+            instance.save()
