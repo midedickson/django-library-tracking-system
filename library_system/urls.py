@@ -13,4 +13,4 @@ router.register(r"loans", views.LoanViewSet)
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include(router.urls)),
-] + router.urls
+]
