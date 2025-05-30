@@ -42,7 +42,7 @@ services:
       - redis
   celery-beat:
     build: .
-    command: celery -A libary_system beat -l INFO
+    command: celery -A library_system beat -l INFO
     volumes:
       - .:/code
     env_file:
