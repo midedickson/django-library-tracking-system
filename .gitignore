@@ -101,3 +101,6 @@ dmypy.json
 *.bak
 *.tmp
 *.temp
+
+# venv
+venv
